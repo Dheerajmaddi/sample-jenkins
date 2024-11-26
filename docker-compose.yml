@@ -1,0 +1,21 @@
+services:
+  backend:
+    image: dheerajmaddi/springboot-backend
+    container_name: springboot-backend
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+  frontend:
+    image: dheerajmaddi/react-frontend
+    container_name: react-frontend
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
